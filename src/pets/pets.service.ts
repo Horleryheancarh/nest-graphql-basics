@@ -15,6 +15,10 @@ export class PetsService {
     return this.petsRepository.save(newPet);
   }
 
+  findOne(id: number): Promise<Pet> {
+    return this.petsRepository.findOneOrFail({ where: { id } });
+  }
+
   async findAll(): Promise<Pet[]> {
     // SELECT * pet
     return await this.petsRepository.find();
