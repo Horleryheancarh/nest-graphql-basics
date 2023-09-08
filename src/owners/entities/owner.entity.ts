@@ -1,7 +1,8 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Pet } from 'src/pets/pets.entity';
-import { Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity('owners')
 @ObjectType()
 export class Owner {
   @PrimaryGeneratedColumn()
